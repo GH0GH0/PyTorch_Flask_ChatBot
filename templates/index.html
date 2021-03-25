@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>ChatBot</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container chatBot">
+
+    <!-- <div class="container">
+      <img src="static/img/gallic.png" alt="Avatar" style="width:100%;">
+      <p>Hello. How are you today?</p>
+      <span class="time-right">11:00</span>
+    </div>
+     <div class="container">
+      <img src="static/img/gallic.png" alt="Avatar" style="width:100%;">
+      <p>Hello. How are you today?</p>
+      <span class="time-right">11:00</span>
+    </div>
+    <div class="container darker">
+      <img src="static/img/gallic.png" alt="Avatar" class="right" style="width:100%;">
+      <p>Hey! I'm fine. Thanks for asking!</p>
+      <span class="time-left">11:01</span>
+    </div> -->
+    {% if message %}
+        <div class="container darker">
+          <img src="static/img/gallic.png" alt="Avatar" class="right" style="width:100%;">
+          <p>{{message}}</p>
+          <span class="time-left">11:01</span>
+        </div>
+        <div class="container">
+          <img src="static/img/gallic.png" alt="Avatar" style="width:100%;">
+          <p>{{reponse}}</p>
+          <span class="time-right">11:00</span>
+        </div>
+    {% endif%}
+
+    <div class="form">
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content" style="width: 84%;">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+</div>
+{% endblock %}
